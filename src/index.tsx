@@ -6,28 +6,32 @@ interface AppProps {
   color?: string;
 }
 
-class App extends React.Component<AppProps> {
-  // This is the easiest way to define state in a class based
-  // component because we just override the state property
-  // There is different syntax for constructor based state init
-  state = { counter: 0 };
-  onIncrement = (): void => {
-    this.setState({ counter: this.state.counter + 1 });
-  };
+const App = (props: AppProps): JSX.Element => {
+  return <div>{props.color}</div>;
+};
 
-  onDecrement = (): void => {
-    this.setState({ counter: this.state.counter - 1 });
-  };
+// class App extends React.Component<AppProps> {
+//   // This is the easiest way to define state in a class based
+//   // component because we just override the state property
+//   // There is different syntax for constructor based state init
+//   state = { counter: 0 };
+//   onIncrement = (): void => {
+//     this.setState({ counter: this.state.counter + 1 });
+//   };
 
-  render() {
-    return (
-      <div>
-        <button onClick={this.onIncrement}>Increment</button>
-        <button onClick={this.onDecrement}>Decrement</button>
-        {this.state.counter}
-      </div>
-    );
-  }
-}
+//   onDecrement = (): void => {
+//     this.setState({ counter: this.state.counter - 1 });
+//   };
+
+//   render() {
+//     return (
+//       <div>
+//         <button onClick={this.onIncrement}>Increment</button>
+//         <button onClick={this.onDecrement}>Decrement</button>
+//         {this.state.counter}
+//       </div>
+//     );
+//   }
+// }
 
 ReactDOM.render(<App color="red" />, document.querySelector("#root"));
