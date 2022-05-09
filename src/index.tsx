@@ -7,6 +7,9 @@ interface AppProps {
 }
 
 class App extends React.Component<AppProps> {
+  // This is the easiest way to define state in a class based
+  // component because we just override the state property
+  // There is different syntax for constructor based state init
   state = { counter: 0 };
   onIncrement = (): void => {
     this.setState({ counter: this.state.counter + 1 });
